@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 SURPRISE []! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .balloon {
+            position: absolute;
+            font-size: 3rem;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cake {
+            font-size: 6rem;
+            margin: 2rem 0;
+            animation: wiggle 2s infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        .message {
+            max-width: 600px;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin: 2rem 1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .photo-gallery {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo:hover {
+            transform: scale(1.1);
+        }
+        
+        .countdown {
+            font-size: 2rem;
+            margin: 2rem 0;
+            font-weight: 700;
+        }
+        
+        .btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        
+        .memory {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .cake { font-size: 4rem; }
+            .message { font-size: 1.1rem; padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti" id="confetti"></div>
+    
+    <!-- Floating Balloons -->
+    <div class="balloon" style="left: 10%; animation-delay: 0s;">🎈</div>
+    <div class="balloon" style="left: 20%; animation-delay: 1s;">🎉</div>
+    <div class="balloon" style="left: 80%; animation-delay: 2s;">🎈</div>
+    <div class="balloon" style="left: 90%; animation-delay: 3s;">🎊</div>
+
+    <h1>🎉 HAPPY HAPPY HAPPIEST BIRTHDAY ABHI ]! 🎉</h1>
+    <p class="subtitle">Sometimes I sit and think about how lucky I am to have you in my life. You came into my life and became someone I can’t imagine living without. You saw me in my lowest moments, in my weakest days, and you never left my side. Instead, you stayed, supported me, and loved me when I needed it the most.
+
+I want you to know how proud I am of you. Of your strength, your heart, and the way you keep going even when things are hard. You deserve every good thing in this world.
+
+No matter where life takes us, I promise you this — I will always be there for you. In your happiest moments and in your darkest days. Just like you held my hand when I needed it, I will always hold yours.
+
+You’re not just my best friend… you’re my family, my safe place, and one of the most important people in my life. I will always love you and be grateful that I get to call you my best friend.I LOVE YOU BANGARAMMM...💖</p>
+    
+    <div class="cake">🎂✨🎂</div>
+    
+    <div class="message">
+        <strong>Hey birthday queen! 👑</strong><br><br>
+        Today is ALL about celebrating YOU - the most amazing, hilarious, 
+        supportive bestie anyone could ask for! We've laughed until we cried, 
+        stayed up way too late talking about everything, and made memories 
+        that'll last a lifetime. Here's to another year of adventures together! 🥂
+    </div>
+    
+    
+    <div class="countdown" id="countdown">
+        Get ready for your special day!
+    </div>
+    <script>
+// Set your special date here
+const targetDate = new Date("April 10, 2026 00:00:00").getTime();
+
+const countdownFunction = setInterval(function() {
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "🎉 It's the day! 🎂";
+    }
+
+}, 1000);
+</script>
+    <button class="btn" onclick="launchConfetti()">🎊 LAUNCH CONFETTI! 🎊</button>
+    <button class="btn" onclick="playSong()">🎵 Play Birthday Song 🎵</button>
+    <audio id="birthdaySong">
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+    <p style="margin-top: 3rem; font-size: 1.1rem; opacity: 0.8;">
+        Love you to the moon and back! 🌙💕<br>
+        - Your Bestie Forever ✨
+    </p>
+
+    <script>
+        // Confetti function
+        function launchConfetti() {
+            const confetti = document.getElementById('confetti');
+            for(let i = 0; i < 100; i++) {
+                const conf = document.createElement('div');
+                conf.innerHTML = ['🎉','🎊','✨','⭐','💫','🎈'][Math.floor(Math.random()*6)];
+                conf.style.position = 'fixed';
+                conf.style.left = Math.random() * 100 + '%';
+                conf.style.top = '-10%';
+                conf.style.fontSize = '1.5rem';
+                conf.style.pointerEvents = 'none';
+                conf.style.animation = `fall ${Math.random()*3 + 2}s linear forwards`;
+                confetti.appendChild(conf);
+                
+                setTimeout(() => conf.remove(), 5000);
+            }
+        }
+        
+        // Add falling animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Auto confetti on load
+        window.addEventListener('load', () => {
+            setTimeout(launchConfetti, 1000);
+        });
+        
+        // Birthday song (simple beep version)
+        function playSong() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const notes = [261.63, 261.63, 392.00, 392.00, 440.00, 349.23, 349.23, 330.00];
+            
+            notes.forEach((freq, i) => {
+                setTimeout(() => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    oscillator.frequency.value = freq;
+                    oscillator.type = 'sine';
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.5);
+                }, i * 500);
+            });
+        }
+        
+        // Add some sparkle effects
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.fontSize = '2rem';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.animation = 'sparkle 2s ease-out forwards';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 2000);
+        }, 2000);
+    </script>
+</body>
+</html>
